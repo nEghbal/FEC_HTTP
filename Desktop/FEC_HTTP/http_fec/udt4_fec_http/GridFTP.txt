@@ -1,0 +1,150 @@
+
+error: an end-of-file was reached
+globus_xio: An end of file occurred
+real 187.41
+user 0.25
+sys 4.94
+
+error: an end-of-file was reached
+globus_xio: An end of file occurred
+real 190.51
+user 0.27
+sys 4.83
+
+error: an end-of-file was reached
+globus_xio: An end of file occurred
+real 199.18
+user 0.25
+sys 4.65
+
+error: an end-of-file was reached
+globus_xio: An end of file occurred
+real 199.32
+user 0.28
+sys 4.96
+
+error: an end-of-file was reached
+globus_xio: An end of file occurred
+real 196.56
+user 0.26
+sys 4.77
+
+error: an end-of-file was reached
+globus_xio: An end of file occurred
+real 108.09
+user 0.21
+sys 3.95
+
+error: an end-of-file was reached
+globus_xio: An end of file occurred
+real 100.43
+user 0.17
+sys 3.58
+
+error: an end-of-file was reached
+globus_xio: An end of file occurred
+real 103.77
+user 0.16
+sys 3.47
+
+error: an end-of-file was reached
+globus_xio: An end of file occurred
+real 103.58
+user 0.20
+sys 3.90
+
+error: an end-of-file was reached
+globus_xio: An end of file occurred
+real 104.37
+user 0.20
+sys 3.90
+
+error: an end-of-file was reached
+globus_xio: An end of file occurred
+real 56.90
+user 0.13
+sys 3.41
+
+error: an end-of-file was reached
+globus_xio: An end of file occurred
+real 57.75
+user 0.17
+sys 3.13
+
+error: an end-of-file was reached
+globus_xio: An end of file occurred
+real 62.92
+user 0.16
+sys 3.41
+
+error: an end-of-file was reached
+globus_xio: An end of file occurred
+real 58.94
+user 0.14
+sys 3.05
+
+error: an end-of-file was reached
+globus_xio: An end of file occurred
+real 55.13
+user 0.13
+sys 2.71
+
+error: an end-of-file was reached
+globus_xio: An end of file occurred
+real 53.33
+user 0.12
+sys 3.03
+
+error: an end-of-file was reached
+globus_xio: An end of file occurred
+real 53.33
+user 0.12
+sys 2.67
+
+error: an end-of-file was reached
+globus_xio: An end of file occurred
+real 54.14
+user 0.12
+sys 2.69
+
+error: an end-of-file was reached
+globus_xio: An end of file occurred
+real 52.96
+user 0.13
+sys 2.76
+
+error: an end-of-file was reached
+globus_xio: An end of file occurred
+real 59.92
+user 0.13
+sys 2.68
+
+error: an end-of-file was reached
+globus_xio: An end of file occurred
+real 52.68
+user 0.09
+sys 1.85
+
+error: an end-of-file was reached
+globus_xio: An end of file occurred
+real 51.38
+user 0.08
+sys 2.12
+
+error: an end-of-file was reached
+globus_xio: An end of file occurred
+real 48.18
+user 0.09
+sys 2.09
+
+error: an end-of-file was reached
+globus_xio: An end of file occurred
+real 53.34
+user 0.10
+sys 1.84
+
+error: an end-of-file was reached
+globus_xio: An end of file occurred
+real 50.15
+user 0.09
+sys 1.91
