@@ -14,6 +14,9 @@ node1 = request.RawPC("node1")
 
 node2 = request.RawPC("node2")
 
+# Create a link between them
+link1 = request.Link(members = [node1,node2])
+
 # Install and execute a script that is contained in the repository.
 node1.addService(pg.Execute(shell="sh", command="/local/repository/server.sh"))
 node2.addService(pg.Execute(shell="sh", command="/local/repository/client.sh"))
