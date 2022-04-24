@@ -585,8 +585,8 @@ void CUDT::open()
    m_ullSYNInt = m_iSYNInterval * m_ullCPUFrequency;
   
    // set minimum NAK and EXP timeout to 100ms
-   m_ullMinNakInt = 300000 * m_ullCPUFrequency;
-   m_ullMinExpInt = 300000 * m_ullCPUFrequency;
+   m_ullMinNakInt = 50000 * m_ullCPUFrequency;
+   m_ullMinExpInt = 50000 * m_ullCPUFrequency;
 
    m_ullACKInt = m_ullSYNInt;
    m_ullNAKInt = m_ullMinNakInt;
@@ -1985,7 +1985,7 @@ void CUDT::sendCtrl(int pkttype, void* lparam, void* rparam, int size)
       }
 
       // update next NAK time, which should wait enough time for the retansmission, but not too long
-      m_ullNAKInt = (m_iRTT + 4 * m_iRTTVar) * m_ullCPUFrequency;
+      m_ullNAKInt = /*(m_iRTT + 4 * m_iRTTVar)*/ 50000 * m_ullCPUFrequency;
       int rcv_speed = m_pRcvTimeWindow->getPktRcvSpeed();
       if (rcv_speed > 0)
          m_ullNAKInt += (m_pRcvLossList->getLossLength() * 1000000ULL / rcv_speed) * m_ullCPUFrequency;
@@ -2835,21 +2835,21 @@ void CUDT::checkTimers()
    }
 
    // we are not sending back repeated NAK anymore and rely on the sender's EXP for retransmission
-   //if ((m_pRcvLossList->getLossLength() > 0) && (currtime > m_ullNextNAKTime))
-   //{
-   //   // NAK timer expired, and there is loss to be reported.
-   //   sendCtrl(3);
-   //
-   //   CTimer::rdtsc(currtime);
-   //   m_ullNextNAKTime = currtime + m_ullNAKInt;
-   //}
+   if ((m_pRcvLossList->getLossLength() > 0) && (currtime > m_ullNextNAKTime))
+   {
+      // NAK timer expired, and there is loss to be reported.
+      sendCtrl(3);
+   
+      CTimer::rdtsc(currtime);
+      m_ullNextNAKTime = currtime + m_ullNAKInt;
+   }
 
    uint64_t next_exp_time;
    if (m_pCC->m_bUserDefinedRTO)
       next_exp_time = m_ullLastRspTime + m_pCC->m_iRTO * m_ullCPUFrequency;
    else
    {
-      uint64_t exp_int = (m_iEXPCount * (m_iRTT + 4 * m_iRTTVar) + m_iSYNInterval) * m_ullCPUFrequency;
+      uint64_t exp_int = (m_iEXPCount * 50000/*(m_iRTT + 4 * m_iRTTVar)*/ + m_iSYNInterval) * m_ullCPUFrequency;
       if (exp_int < m_iEXPCount * m_ullMinExpInt)
          exp_int = m_iEXPCount * m_ullMinExpInt;
       next_exp_time = m_ullLastRspTime + exp_int;
