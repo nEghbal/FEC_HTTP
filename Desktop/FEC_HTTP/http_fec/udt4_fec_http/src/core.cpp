@@ -2636,9 +2636,9 @@ int CUDT::processData(CUnit* unit)
      //    m_pRcvLossList->insert(CSeqNo::incseq(m_iRcvCurrSeqNo), CSeqNo::decseq(packet.m_iSeqNo));
    }
 // Nooshin done;
-   //else if(CSeqNo::seqcmp(packet.m_iSeqNo, CSeqNo::incseq(m_iRcvCurrSeqNo)) > 0) {
+   if(CSeqNo::seqcmp(packet.m_iSeqNo, CSeqNo::incseq(m_iRcvCurrSeqNo)) > 0) {
       sendNAK(CSeqNo::incseq(m_iRcvCurrSeqNo), CSeqNo::decseq(packet.m_iSeqNo));
-   //}
+   }
 
    // This is not a regular fixed size packet...   
    //an irregular sized packet usually indicates the end of a message, so send an ACK immediately   
