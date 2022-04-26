@@ -2529,7 +2529,7 @@ void CUDT::sendNAK(int32_t first_loss_seq, int32_t second_loss_seq)
    //cout << " sendNAK " << first_loss_seq << endl << std::flush;
    int32_t lossdata[2];
    int loss;
-   if (m_FEC->getRate(true) < 0)
+   //if (m_FEC->getRate(true) < 0)
       m_pRcvLossList->insert(first_loss_seq, second_loss_seq);
    // pack loss list for NAK
    lossdata[0] = first_loss_seq | 0x80000000;
@@ -2632,13 +2632,13 @@ int CUDT::processData(CUnit* unit)
 // Added by Nooshin  
    if (m_FEC->getRate(true) > 0) {
       m_FEC->onPktReceived(&packet);
-      if(CSeqNo::seqcmp(packet.m_iSeqNo, CSeqNo::incseq(m_iRcvCurrSeqNo)) > 0)
-         m_pRcvLossList->insert(CSeqNo::incseq(m_iRcvCurrSeqNo), CSeqNo::decseq(packet.m_iSeqNo));
+     // if(CSeqNo::seqcmp(packet.m_iSeqNo, CSeqNo::incseq(m_iRcvCurrSeqNo)) > 0)
+     //    m_pRcvLossList->insert(CSeqNo::incseq(m_iRcvCurrSeqNo), CSeqNo::decseq(packet.m_iSeqNo));
    }
 // Nooshin done;
-   else if(CSeqNo::seqcmp(packet.m_iSeqNo, CSeqNo::incseq(m_iRcvCurrSeqNo)) > 0) {
+   //else if(CSeqNo::seqcmp(packet.m_iSeqNo, CSeqNo::incseq(m_iRcvCurrSeqNo)) > 0) {
       sendNAK(CSeqNo::incseq(m_iRcvCurrSeqNo), CSeqNo::decseq(packet.m_iSeqNo));
-   }
+   //}
 
    // This is not a regular fixed size packet...   
    //an irregular sized packet usually indicates the end of a message, so send an ACK immediately   
