@@ -162,7 +162,7 @@ void CSndBuffer::addBuffer(const char* data, int len, int ttl, bool order, bool 
       s->m_OriginTime = time;
       s->m_iTTL = ttl;
 
-      //cout << "m_iMsgNo:  " << s->m_iMsgNo << "  time:  " << time << endl << std::flush;
+      cout << "m_iMsgNo:  " << s->m_iMsgNo << "  time:  " << time << endl << std::flush;
 
       s = s->m_pNext;
    }
