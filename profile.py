@@ -11,9 +11,13 @@ request = pc.makeRequestRSpec()
  
 # Add a raw PC to the request.
 node1 = request.RawPC("node1")
+img1 = "urn:publicid:IDN+emulab.net+image+FEC-HTTP:FECHTTP.node1"
+node1.disk_image = img1
 node1.routable_control_ip = True
 
 node2 = request.RawPC("node2")
+img2 = "urn:publicid:IDN+emulab.net+image+FEC-HTTP:FECHTTP.node2"
+node2.disk_image = img2
 node2.routable_control_ip = True
 
 # Create a link between them
